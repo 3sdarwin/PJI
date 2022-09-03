@@ -1,0 +1,142 @@
+html {
+    /* background: linear-gradient(190deg, #00b5ae 0, #00b5c1 3.33%, #00b4d3 6.67%, #00b4e3 10%, #00b2f3 13.33%, #00b1ff 16.67%, #00aeff 20%, #00abff 23.33%, #00a8ff 26.67%, #00a3ff 30%, #009eff 33.33%, #0098ff 36.67%, #4291ff 40%, #7889ff 43.33%, #9b80ff 46.67%, #b777ff 50%, #ce6df1 53.33%, #e164e2 56.67%, #f05ad2 60%, #fc52c0 63.33%, #ff4bae 66.67%, #ff479c 70%, #ff4689 73.33%, #ff4977 76.67%, #ff4f65 80%, #ff5654 83.33%, #ff5f43 86.67%, #fa6831 90%, #f0711e 93.33%, #e47a00 96.67%, #d88200 100%); */
+    background: url("../imgs/bck.webp") no-repeat center;
+    background-size: cover;
+    height: 100vh;
+}
+
+
+.btnCadFunc {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: 0 25px;
+}
+
+.btnCadFunc h1{
+    color: #fff;
+    text-shadow: 3px 0px 4px rgb( 0, 0, 0);
+}
+
+/* .btnCadFunc a {
+
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 3px 3px 6px rgb(0, 0, 0, .5);
+    transition: 0.5s;
+
+    background: rgba(0, 0, 0, 0.28);
+    border-radius: 3px;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(7.8px);
+    -webkit-backdrop-filter: blur(7.8px);
+}
+
+.btnCadFunc a:hover {
+    background: linear-gradient(45deg, purple, aquamarine, purple);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+
+} */
+
+
+
+
+
+
+.custom-btn {
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 25px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+     7px 7px 20px 0px rgba(0,0,0,.1),
+     4px 4px 5px 0px rgba(0,0,0,.1);
+    outline: none;
+    text-decoration: none;
+  }
+  
+  .btn-3 {
+    background: rgb(0,172,238);
+  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    width: 200px;
+    height: 40px;
+    line-height: 42px;
+    padding: 0;
+    border: none;
+    
+  }
+  .btn-3 span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .btn-3:before,
+  .btn-3:after {
+    position: absolute;
+    content: "";
+    right: 0;
+    top: 0;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+  }
+  .btn-3:before {
+    height: 0%;
+    width: 2px;
+  }
+  .btn-3:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3:hover{
+     background: transparent;
+    box-shadow: none;
+    
+  }
+  .btn-3:hover:before {
+    height: 100%;
+  }
+  .btn-3:hover:after {
+    width: 100%;
+  }
+  .btn-3 span:hover{
+     color: rgba(2,126,251,1);
+  }
+  .btn-3 span:before,
+  .btn-3 span:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+     background: rgba(2,126,251,1);
+    transition: all 0.3s ease;
+  }
+  .btn-3 span:before {
+    width: 2px;
+    height: 0%;
+  }
+  .btn-3 span:after {
+    width: 0%;
+    height: 2px;
+  }
+  .btn-3 span:hover:before {
+    height: 100%;
+  }
+  .btn-3 span:hover:after {
+    width: 100%;
+  }
+  
+  
+ 
+  
