@@ -1,0 +1,102 @@
+CREATE DATABASE Clinica2;
+
+use clinica2;
+
+CREATE table funcionario(
+    Id integer AUTO_INCREMENT NOT NULL,
+    Nome Varchar(50) NOT Null,
+    CPF char(11),
+    RG char(9),
+    Sexo char(1),
+    Data_Nasc date,
+    ADM boolean NOT Null,
+    Telefone char(11),
+    Salario double,
+    Cidade varchar(30),
+    Rua varchar(60),
+    Num integer,
+    Bairro varchar(30),
+    PRIMARY KEY(id));
+
+CREATE TABLE Loguin(
+    IdFunc integer not null,
+    Username varchar(20) not null,
+    Senha char(4) not null,
+    PRIMARY KEY(IdFunc, Username),
+    FOREIGN KEY(IdFunc) REFERENCES funcionario(id));
+
+CREATE TABLE Medico(
+    IdFunc integer NOT null,
+    CRM char(8),
+    IstFormacao varchar(30),
+    Conclusao date,
+    PRIMARY KEY(idFunc),
+    FOREIGN KEY(idFunc) REFERENCES funcionario(id));
+
+CREATE TABLE Secretaria(
+    IdFunc integer NOT null,
+    CTPS char(8),
+    IstFormacao varchar(30),
+    Conclusao date,
+    PRIMARY KEY(idFunc),
+    FOREIGN KEY(idFunc) REFERENCES funcionario(id));
+
+CREATE table Paciente(
+    Nome Varchar(50) NOT Null,
+    CPF char(11) NOT null,
+    RG char(9),
+    Sexo char(1),
+    Data_Nasc date,
+    Telefone char(11) NOT null,
+    email varchar(60),
+    Cidade varchar(30),
+    Rua varchar(60),
+    Num integer,
+    Bairro varchar(30),
+    PRIMARY KEY(cpf));
+
+CREATE TABLE Consulta(
+    idPaciente char(11),
+    Valor double,
+    DataCons date,
+    HoraCons time,
+    PRIMARY KEY(idPaciente),
+    FOREIGN KEY(idPaciente) REFERENCES paciente(cpf));
+
+create table Cadastra(
+    IdSecretaria integer not null,
+    IdConsulta char(14) not null,
+    IdPaciente char(14) not null,
+    Data date not null,
+    Hora time not null,
+    Primary key(IdSecretaria, IdConsulta, IdPaciente, Data, Hora),
+    Foreign Key(IdSecretaria) references Secretaria(idFunc),
+    Foreign Key(IdConsulta) references Consulta(IdPaciente),
+    Foreign Key(IdPaciente) references Paciente(CPF));
+
+create table Exame(
+    Codigo integer not null,
+    IdPaciente char(14) not null,
+    Nome varchar(40),
+    Tipo Varchar(40),
+    Primary key(IdPaciente, Codigo),
+    Foreign key(IdPaciente) references Paciente(CPF));
+
+create table Receita(
+    Numero integer not null,
+    IdPaciente char(14) not null,
+    Medicamento varchar(30),
+    Dose_Diaria integer,
+    Validade date,
+    Primary key(Numero, IdPaciente),
+    Foreign Key(IdPaciente) references Paciente(CPF));
+
+create table Atende(
+    IdMedico integer not null,
+    IdPaciente char(14) not null,
+    Data date not null,
+    Hora time not null,
+    Diagnostico varchar(100),
+    primary key(IdMedico, IdPaciente, Data, Hora),
+    foreign key(IdMedico) references Medico(IdFunc),
+    foreign key(IdPaciente) references Paciente(CPF));
